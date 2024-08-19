@@ -19,26 +19,25 @@ import java.util.List;
 public class CarController {
     private final CarService carService;
 
-    @GetMapping
-    public ResponseEntity<List<CarDTO>> getAllCars() {
-        return ResponseEntity.ok(carService.getAllCars());
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCar(@PathVariable Integer id) {
+        carService.removeCar(id);
+        return ResponseEntity.ok().build();
     }
-
     @PostMapping
     public ResponseEntity<Void> addCar(@RequestBody CarCommand command) {
         carService.addCar(command);
         log.info("Car added successfully");
         return ResponseEntity.ok().build();
     }
-
+    @GetMapping
+    public ResponseEntity<List<CarDTO>> getAllCars() {
+        return ResponseEntity.ok(carService.getAllCars());
+    }
     @PutMapping
     public ResponseEntity<CarDTO> updateCar(@RequestBody UpdateCarCommand command) {
         return ResponseEntity.ok(carService.updateCar(command));
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCar(@PathVariable Integer id) {
-        carService.removeCar(id);
-        return ResponseEntity.ok().build();
-    }
+
 }
