@@ -1,0 +1,11 @@
+z pomocą chatugpt napisz podstawową stronę html która ma 2 pola login, hasło
+oraz przycisk zaloguj.
+Po wciśnięciu przycisku zaloguj, dane mają być przesłane do twojej aplikacji w javie.
+Jeśli znajdzie użytkownika to przycisk ma zmienić napis z zaloguj na "okej!",
+jeśli nie znajdzie, to przycisk ma zmienić napis na "źle!!!".
+Przyjmijmy, że login jest Stringiem, hasło również jest stringiem,
+napisz do tego metode która zaszyfruje hasło w wybrany przez ciebie sposób, najlepiej
+hash typu sha256. Przy logowaniu trzeba sprawdzić czy hasła dla podanego loginu
+się zgadzają. Oprócz tego napisz endpoint który zwróci wszystkich użytkowników,
+napisz endpoint do dodania użytkownika.
+I sprawdzić save i saveAndFlush czym się różnią

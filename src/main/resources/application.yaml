@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: SpringJpaBasics
+  datasource:
+    username: root
+    password: qwerty123456
+    url: jdbc:mysql://localhost:3306/jpa?useSSL=false&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
