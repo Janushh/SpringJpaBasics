@@ -1,6 +1,8 @@
 package pl.kurs.springjpabasics.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.kurs.springjpabasics.command.CarCommand;
@@ -13,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/cars")
 @RequiredArgsConstructor
+@Slf4j
 public class CarController {
     private final CarService carService;
 
@@ -24,6 +27,7 @@ public class CarController {
     @PostMapping
     public ResponseEntity<Void> addCar(@RequestBody CarCommand command) {
         carService.addCar(command);
+        log.info("Car added successfully");
         return ResponseEntity.ok().build();
     }
 
