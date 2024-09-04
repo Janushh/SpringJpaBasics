@@ -13,7 +13,7 @@ import pl.kurs.springjpabasics.service.CarService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/cars")
+    @RequestMapping("/api/v1/cars")
 @RequiredArgsConstructor
 @Slf4j
 public class CarController {

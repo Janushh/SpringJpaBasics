@@ -40,7 +40,6 @@ public class CarServiceImpl implements CarService {
         modelMapper.map(updateCarCommand, car);
 
         Car carToSave = carRepository.save(car);
-        //TODO zobaczyć różnice między save a saveAndFlush
 
         return modelMapper.map(carToSave, CarDTO.class);
     }
